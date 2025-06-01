@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    /* Базовые опции */
+    "target": "ESNext",                         // Современный вывод JS
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],   // Библиотеки, которые мы используем (DOM + новейший JS)
+    "module": "ESNext",                         // Модульная система
+    "moduleResolution": "Node",                 // Алгоритм поиска модулей, как в Node.js
+    "jsx": "react-jsx",                         // Новый JSX-трансформ React 17+
+
+    /* Разрешаем импорт JSON и настройку совместимости */
+    "resolveJsonModule": true,                  // Чтобы можно было импорти́ровать .json (например, db.json)
+    "esModuleInterop": true,                    // Для корректной работы с модулями CommonJS
+    "isolatedModules": true,                    // Нужно для инструментов вроде Babel/Vite
+
+    /* Строгий режим и проверка типов */
+    "strict": true,                             // Включаем все строгие проверки TypeScript
+    "skipLibCheck": true,                       // Пропускаем проверку типов в node_modules
+    "forceConsistentCasingInFileNames": true,   // Требуем единообразие регистра в именах файлов
+
+    /* Специально для Vite + Jest + TS */
+    "verbatimModuleSyntax": true,               // Нужен для работы с type-only импортами
+    "types": [
+      "vite/client",    // Дает типы для импортов типа import.meta.env
+      "jest"            // Дает глобальные типы Jest (beforeAll, test, expect и т.д.)
+    ]
+  },
+
+  /* Указываем, какие файлы компилировать */
+  "include": ["src"],
+
+  /* Если есть необходимость ссылаться на другие конфигурации (например, tsconfig.node.json),
+     можно добавить раздел "references", но в нашем случае вся логика описана прямо в этом файле. */
+  "files": [],
+  "references": []
+}

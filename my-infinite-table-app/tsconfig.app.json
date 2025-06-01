@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // Меняем на «Node», чтобы TS мог находить типы из node_modules (в том числе msw)
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    /* ↓↓↓ Добавляем сюда нужные типы ↓↓↓ */
+    "types": [
+      "vite/client",   // типы для Vite (`import.meta.env` и т. п.)
+      "jest",          // глобальные типы Jest (beforeAll, test, expect и т.д.)
+      "msw"            // типы MSW (rest, setupServer и пр.)
+    ]
+  },
+  "include": ["src"]
+}
+
+
