@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Form } from './components/Form'
 import { Table } from './components/Table'
-import type { Record } from './api/records'
+import type { Record as ApiRecord } from './api/records'
 
 const App: React.FC = () => {
-  const [recordsFromForm, setRecordsFromForm] = useState<Record[]>([])
+  const [recordsFromForm, setRecordsFromForm] = useState<ApiRecord[]>([])
 
-  const handleNewRecord = (newRec: Record) => {
-    setRecordsFromForm(prev => [newRec, ...prev])
+  const handleNewRecord = (newRec: ApiRecord) => {
+    setRecordsFromForm(prev => [...prev, newRec])
   }
 
   return (
@@ -45,3 +45,4 @@ const App: React.FC = () => {
 }
 
 export default App
+
